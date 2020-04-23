@@ -11,6 +11,7 @@ export const userActions = {
     delete: _delete
 };
 
+
 function login(username, password) {
     return dispatch => {
         dispatch(request({ username }));
@@ -44,7 +45,7 @@ function register(user) {
 
         userService.register(user)
             .then(
-                user => { 
+                user => {
                     dispatch(success());
                     history.push('/login');
                     dispatch(alertActions.success('Registration successful'));
@@ -64,7 +65,6 @@ function register(user) {
 function getAll() {
     return dispatch => {
         dispatch(request());
-
         userService.getAll()
             .then(
                 users => dispatch(success(users)),
@@ -79,9 +79,9 @@ function getAll() {
 
 // prefixed function name with underscore because delete is a reserved word in javascript
 function _delete(id) {
+    console.log('########user.action _delete')
     return dispatch => {
         dispatch(request(id));
-
         userService.delete(id)
             .then(
                 user => dispatch(success(id)),

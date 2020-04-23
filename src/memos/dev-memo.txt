@@ -1,0 +1,9 @@
+1.post必须加header：Content-Type': 'application/json' 
+不然会导致server端解析不到body
+headers: { ...authHeader(),'Content-Type': 'application/json' },
+
+
+2.component无限调用方法，造成页面阻塞
+原因：this.methodName=this.methodName(this),忘记加.bind(this):
+this.methodName=this.methodName.bind(this)
+写错不会报错，直接死循环调用methodName
