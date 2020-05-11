@@ -22,7 +22,7 @@ module.exports = {
     externals: {
         // global app config object
         config: JSON.stringify({
-            apiUrl: 'http://192.168.10.218:4000'
+            apiUrl: 'https://index-reminder-backend.herokuapp.com'
         })
     }
 }
