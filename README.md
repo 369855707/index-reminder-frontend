@@ -13,7 +13,9 @@ refresh JWT :
 
 steps to use Redux in React Project : 
 1. wrap Root Component with <Provider store={store}>
+    
 2. connect Redux to Component, here we must be carefull as anything changed in Store would trigger whole ConnectedComponent refresh, it would have performance issue in somecases. I did not met yet, but will.
+
 after Component get connected, it will be able to do two things: 1.access Store in Redux; 2. send out action to change Store.
 Component got refresh while Store was changed by Action.
 I am giving an example here : 
